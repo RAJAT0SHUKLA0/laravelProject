@@ -8,10 +8,11 @@ use App\Models\SubCategory;
 use App\Models\Category;
 use Illuminate\Support\Str;
 
+
 class SubCategoryController extends Controller
 {
 public function subcategoryList(){
-
+$hello='';
     $subcategory = SubCategory::leftjoin('tbl_category','tbl_subcategory.category_id','=','tbl_category.id')->select('tbl_subcategory.*','tbl_category.name as categoryName')->where('tbl_subcategory.is_delete','!=',1)->get();
     return view('admin.subcategory.subcategoryList', ['subcategory'=>  $subcategory]);
      
