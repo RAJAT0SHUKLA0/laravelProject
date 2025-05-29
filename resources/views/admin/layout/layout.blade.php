@@ -1,0 +1,5 @@
+@include('admin.layout.header')
+@include('admin.layout.sidebar')
+@yield('content')
+@flasher_render()
+@include('admin.layout.footer')
